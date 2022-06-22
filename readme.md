@@ -17,4 +17,4 @@ npm run watch
 
 ## Helpers
 
-https://www.geeksforgeeks.org/php-imagebmp-function/
+https://www.geeksforgeeks.org/php-imagebmp-function/  
