@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/var-dumper": "^6.0",
+        "symfony/dotenv": "^6.0"
+    }
+}
