@@ -10,7 +10,8 @@ if(isset($_POST['name'])) {
     mkdir($dest);
 
     $dataImages = [];
-    for($i = 0; $i < count($_FILES['images']); $i++) {
+
+    for($i = 0; $i < count($_FILES['images']['name']); $i++) {
         $imgName = toSlug($_FILES['images']['name'][$i]);
         move_uploaded_file($_FILES['images']['tmp_name'][$i], $dest.'/'.$imgName);
         array_push($dataImages, $dest.'/'.$imgName);

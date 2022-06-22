@@ -42,8 +42,8 @@ if(isset($_GET['slug'])) {
     <?php endif; ?>
     <script>
         let images = []
-        <?php foreach($spritesImg as $img) : ?>
-            images.push('<?= $img ?>')
+        <?php foreach($spritesImg as $imgs) : ?>
+            images.push('<?= $imgs ?>')
         <?php endforeach; ?>
         console.table(images)
         let target = document.querySelector('.animatedSprites')
@@ -53,7 +53,7 @@ if(isset($_GET['slug'])) {
                 //target.src = el
                 setTimeout(function() {
                     target.src = el
-                }, 200)
+                }, 10200)
             })
         }
         setInterval(animate(images), images.length*100)
