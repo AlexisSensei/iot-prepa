@@ -1,0 +1,109 @@
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    background: #161516;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.resoPicker {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.795);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.resoPicker__input {
+    margin: 10px;
+}
+
+.resoPicker__submit {
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(34, 34, 34);
+    color: white;
+    padding: 15px;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background: rgb(65, 65, 65);
+    width: 7%;
+    height: 100%;
+    padding: 1rem;
+}
+
+nav > input {
+    width: 100%;
+    margin: 20px 0;
+}
+
+label {
+    color: white;
+}
+
+.drawingBoard {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+
+#board {
+    margin: 100px 0;
+    display: block;
+    align-self: center;
+    background: #f0f0f0;
+    border: 5px solid rgb(197, 197, 197);
+    image-rendering: optimizeSpeed;            
+    image-rendering: -moz-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;            
+    image-rendering: crisp-edges;               
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+#saveButton {
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(41, 40, 40);
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button:hover {
+    background: white;
+    color: rgb(41, 40, 40);
+    transition: 0.2s;
+}
+  
