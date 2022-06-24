@@ -19,10 +19,12 @@ function getPixels($slug , $database) {
             $imgConvert[] = imagecreatefrompng('./' . $sprite);
         }
 
+        dump($imgConvert);
+
+        $returnArray = [];
         foreach($imgConvert as $ic){
             $width = imagesx($ic);
             $height = imagesy($ic);
-            dump([$width, $height]);
         
             $colorsImage = [];
             for($x = 0; $x < $height; $x++) {
@@ -35,18 +37,26 @@ function getPixels($slug , $database) {
                     $colorsImage[$x][$y] = [$r, $g, $b];
                 }
             }
+
+            array_push($returnArray, $colorsImage);
             
         
         }
-        $colorsImage = json_encode($colorsImage);
-    }
+        dump($returnArray);
+        $returnArray = json_encode($returnArray);
+        dump($returnArray);
 
-    $query = $database->prepare("INSERT INTO pixels(slug , pixel) VALUES(:slug , :pixel)");
-    $query->execute([
-        'slug' => $slug,
-        'pixel' => $colorsImage
-    ]);
+        $query = $database->prepare("INSERT INTO pixels(slug , pixel) VALUES(:slug , :pixel)");
+        $query->execute([
+            'slug' => $slug,
+            'pixel' => $returnArray
+        ]);
+
+        return $returnArray;
+    } else {
+        return 'No data found';
+    }
 }
 
 getPixels($_GET['slug'] , $database);
-dump(getPixels($_GET['slug'] , $database));
+//dump(getPixels($_GET['slug'] , $database));

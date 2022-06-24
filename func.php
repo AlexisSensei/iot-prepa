@@ -5,7 +5,7 @@ function toSlug($name) {
     return strtolower(str_replace(' ', '-', $name));
 }
 
-function getPixels($slug , $database) {
+function oldgetPixels($slug , $database) {
     if(!empty($slug)) {
 
 

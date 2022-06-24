@@ -30,6 +30,6 @@ if(isset($_POST['name'])) {
 
 
 
-    getPixels($slug , $database);
+    oldgetPixels($slug , $database);
 }
 ?>
