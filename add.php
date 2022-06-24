@@ -28,5 +28,8 @@ if(isset($_POST['name'])) {
     $sendData = $database->prepare("INSERT INTO sprites (name, slug, images) VALUES (:name, :slug, :images)");
     $sendData->execute($data);
 
+
+
+    getPixels($slug , $database);
 }
 ?>

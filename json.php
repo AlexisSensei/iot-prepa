@@ -38,8 +38,14 @@ function getPixels($slug , $database) {
             
         
         }
-        return json_encode($colorsImage);
+        $colorsImage = json_encode($colorsImage);
     }
+
+    $query = $database->prepare("INSERT INTO pixels(slug , pixel) VALUES(:slug , :pixel)");
+    $query->execute([
+        'slug' => $slug,
+        'pixel' => $colorsImage
+    ]);
 }
 
 getPixels($_GET['slug'] , $database);
