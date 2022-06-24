@@ -29,3 +29,4 @@ if(isset($_POST['name'])) {
     $sendData->execute($data);
 
 }
+?>

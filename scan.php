@@ -2,6 +2,7 @@
 require_once 'connect.php';
 require_once 'func.php';
 
+
 if(isset($_GET['slug'])) {
     $slug = $_GET['slug'];
 

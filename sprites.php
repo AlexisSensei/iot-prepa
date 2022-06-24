@@ -53,7 +53,7 @@ if(isset($_GET['slug'])) {
                 //target.src = el
                 setTimeout(function() {
                     target.src = el
-                }, 10200)
+                }, 100)
             })
         }
         setInterval(animate(images), images.length*100)
